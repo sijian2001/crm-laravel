@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // 認証が必要なルート
 Route::middleware('auth')->group(function () {
-    // ここに認証が必要なページのルートを追加
+    // 顧客管理
+    Route::resource('customers', CustomerController::class);
 });
