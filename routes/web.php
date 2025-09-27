@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,7 @@ Route::middleware('auth')->group(function () {
 
     // 製品管理
     Route::resource('products', ProductController::class);
+
+    // 店舗管理
+    Route::resource('stores', StoreController::class);
 });
