@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ホーム画面
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+// 認証ルート
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// 認証が必要なルート
+Route::middleware('auth')->group(function () {
+    // ここに認証が必要なページのルートを追加
 });
