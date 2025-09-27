@@ -79,8 +79,8 @@ class AuthTest extends TestCase
      */
     public function test_unauthenticated_users_are_redirected_to_login()
     {
-        $response = $this->get('/dashboard');
+        $response = $this->get(route('customers.index'));
 
-        $response->assertRedirect('/login');
+        $response->assertRedirect(route('login'));
     }
 }
