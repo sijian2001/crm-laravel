@@ -37,7 +37,7 @@
                             <a class="nav-link" href="{{ route('stores.index') }}">店舗管理</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">店員管理</a>
+                            <a class="nav-link" href="{{ route('employees.index') }}">店員管理</a>
                         </li>
                     @endauth
                 </ul>

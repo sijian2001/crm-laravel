@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,7 @@ Route::middleware('auth')->group(function () {
 
     // 店舗管理
     Route::resource('stores', StoreController::class);
+
+    // 店員管理
+    Route::resource('employees', EmployeeController::class);
 });
